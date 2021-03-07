@@ -55,19 +55,26 @@
 }
   </style>
 </head>
-<body style="padding: 86px;">
+<body style="padding-top: 86px;">
  <a id="button-back-top"></a>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
   <a class="navbar-brand" href="<c:url value='/'/>" style="width:100px"><img alt="" width="100%" src="https://rubee.com.vn/admin/webroot/upload/image/images/logo-the-gioi-di-dong-2.jpg"></a>
-  <ul class="navbar-nav">
-  <c:forEach items="${menuList}" var="item">
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <c:forEach items="${menuList}" var="item">
     <li class="nav-item">
-    
-      <a class="nav-link <c:if test="${menuActive.equals(item.href)}">active</c:if>" href="<c:url value='${item.href}'/>">${item.title}</a>
+      <a class="nav-link" href="<c:url value='${item.href}'/>">${item.title}</a>
     </li>
-   </c:forEach>
-  </ul>
+   </c:forEach>  
+    </ul>
+  </div>  
 </nav>
+
+
 <div class= "container">
 <c:if test="${brandList == null && typeList == null}">
 	<h1>Hello. This is Web crawl data of website thegioididong</h1>
