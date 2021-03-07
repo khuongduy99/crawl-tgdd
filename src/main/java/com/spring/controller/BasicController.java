@@ -152,7 +152,7 @@ public class BasicController {
             cell = row.createCell(4, CellType.STRING);
             cell.setCellValue(model.getParameter());
         }
-        Resource resource = new ClassPathResource("book.xls");
+        Resource resource = new ClassPathResource("product.xls");
         File file = null;
 		try {
 			file = resource.getFile();
@@ -177,7 +177,7 @@ public class BasicController {
         System.out.println("Created file: " + file.getAbsolutePath());
         
         response.setContentType("application/vnd.ms-excel");
-		response.addHeader("Content-Disposition", "attachment; filename=b.xls");
+		response.addHeader("Content-Disposition", "attachment; filename=product.xls");
 		try {
 			Path pFile = Paths.get(resource.getURI());
 			Files.copy(pFile, response.getOutputStream());
