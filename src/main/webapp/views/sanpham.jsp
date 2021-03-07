@@ -115,8 +115,7 @@
 		
 		<c:set var="tempLinkSp" value=""/>
 		<c:forEach items="${productList}" var="item">
-			<div class="col-md-3">
-				<a href="<c:url value='${item.url}'/>">
+			<div class="col-md-3">=
 					<div class="card" style="width:100%">
 					  <img class="card-img-top" src="${item.urlImage }" alt="Card image">
 					  <div class="card-body">
@@ -124,7 +123,6 @@
 					    <strong>${item.price}</strong>  
 					  </div>
 					</div>
-				</a>
 			</div>
 		</c:forEach>
 		<input type="hidden" value="${tempLinkSp}" id="ip-link-sp">
